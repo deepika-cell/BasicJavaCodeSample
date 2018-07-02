@@ -1,5 +1,7 @@
 package pattern;
 
+//Defines the skeleton of an algorithm as an abstract class, allowing its sub-classes to provide concrete behavior.
+
 abstract class taxCalculator
 {
 	abstract void initiate();
