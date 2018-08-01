@@ -1,3 +1,4 @@
+// basic enum
 enum userStatus
 {
 	ACTIVE,
@@ -5,12 +6,31 @@ enum userStatus
 	PENDING;
 }
 
+// enum with custom enum values
+enum myStatus
+{
+	START("Start"),
+	RUNNING("In Progress"),
+	STOPPED("Stopped");
+	
+	private String status;
+	private myStatus(String status)
+	{
+		this.status = status;
+	}
+	
+	public String getStatus()
+	{
+		return this.status;
+	}
+}
+
+// enum with method
 enum enumWithMethod
 {
 	PLUS,
 	MINUS,
 	MULTIPLY;
-	
 	double calculate(double i,double j)
 	{
 		switch(this)
@@ -25,7 +45,6 @@ enum enumWithMethod
 				return 0;
 		}
 	}
-	
 	void test()
 	{
 		System.out.println("Testing enum method");
@@ -40,5 +59,6 @@ public class enumSample
 		System.out.println(userStatus.ACTIVE);
 		System.out.println(enumWithMethod.PLUS.calculate(2,5));
 		enumWithMethod.MULTIPLY.test();
+		System.out.println(myStatus.START.getStatus());
 	}
 }

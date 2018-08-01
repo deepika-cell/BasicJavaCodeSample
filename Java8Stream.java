@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.EnumSet;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -26,6 +27,32 @@ public class Java8Stream
 													.filter(element -> element.length() == 4)
 													.count());
 		
+		EnumSet.allOf(Format.class).stream().forEach(element -> System.out.println(element));
+							
+		boolean count = EnumSet.allOf(Format.class).stream().anyMatch(element -> element.toString().matches("XML"));
+				
+		boolean count1 = EnumSet.allOf(Format.class).stream().anyMatch(element -> element.getFormat().matches("TwoP"));
 		
+		System.out.println("Count : "+ count);
+		System.out.println("Count1 : "+ count1);
+	}
+}
+
+enum Format
+{
+	XML("XML"),
+	JSON("JSON"),
+	TwoP("2P");
+	
+	private String format;
+	
+	private Format(String format)
+	{
+		this.format = format;
+	}
+	
+	public String getFormat()
+	{
+		return format;
 	}
 }
