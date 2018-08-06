@@ -1,11 +1,17 @@
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class lambda
 {
 	// functional interface
+	@FunctionalInterface
 	interface MathOperation
 	{
 		int operate(int a, int b);
 	}
 	
+	@FunctionalInterface
 	interface Greetings
 	{
 		void show(String msg);  

@@ -18,7 +18,7 @@ class sumAction extends RecursiveAction
 		if(data.size()<=threshold)
 		{
 			Long result = compute(data);
-			System.out.format("Sum of %s: %d\n", data.toString(), result);
+			System.out.format("Sum of %s: %d \n", data.toString(), result);
 		}
 		else
 		{

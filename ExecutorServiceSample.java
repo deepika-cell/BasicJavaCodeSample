@@ -11,6 +11,8 @@ public class ExecutorServiceSample
 		{
 			worker wrk = new worker(i);
 			executor.execute(wrk);
+//			executor.execute(()->{System.out.println("Executor");});   Using Lambda Expression
+			
 		}
 		executor.shutdown();
 	}

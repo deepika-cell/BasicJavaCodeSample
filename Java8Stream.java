@@ -1,20 +1,13 @@
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.EnumSet;
 import java.util.List;
-import java.util.stream.Stream;
+import java.util.stream.Collectors;
 
 public class Java8Stream
 {
 	public static void main(String[] args)
 	{
-		List<String> strings = new ArrayList<String>();
-		strings.add("Test");
-		strings.add("");
-		strings.add("Testing");
-		strings.add("check");
-		strings.add("checking");
-		
-		Stream<String> sstrings = strings.stream();
+		List<String> strings = Arrays.asList("Test","","Testing","check","Checking");
 		
 		strings.stream().forEach(element-> System.out.println(element));
 		System.out.println("Count of strings: "+strings.stream().count());
@@ -29,12 +22,10 @@ public class Java8Stream
 		
 		EnumSet.allOf(Format.class).stream().forEach(element -> System.out.println(element));
 							
-		boolean count = EnumSet.allOf(Format.class).stream().anyMatch(element -> element.toString().matches("XML"));
-				
-		boolean count1 = EnumSet.allOf(Format.class).stream().anyMatch(element -> element.getFormat().matches("TwoP"));
-		
-		System.out.println("Count : "+ count);
-		System.out.println("Count1 : "+ count1);
+		System.out.println(EnumSet.allOf(Format.class).stream().anyMatch(element -> element.toString().matches("XML")));
+		System.out.println(EnumSet.allOf(Format.class).stream().anyMatch(element -> element.getFormat().matches("TwoP")));
+
+		List<String> stringsStartingWithA = strings.stream().filter(element -> element.startsWith("T")).collect(Collectors.toList());
 	}
 }
 
