@@ -1,16 +1,17 @@
 public class swapNumber
 {
-	// Swap 2 numbers without using any other number
+	// Swap any two numbers 
 	public static void main(String[] args)
 	{
+		int temp ;
 		int x=10;
 		int y=15;
 		
 		System.out.println("X:"+x+" Y:"+y);
 		
-		x=x+y;
-		y=x-y;
-		x=x-y;
+		temp = x ;
+		x = y;
+		y = temp ;
 		System.out.println("X:"+x+" Y:"+y);
 	}
 }
