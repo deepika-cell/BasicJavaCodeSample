@@ -8,7 +8,6 @@ public class swapNumber
 		int y=15;
 		
 		System.out.println("X:"+x+" Y:"+y);
-		
 		temp = x ;
 		x = y;
 		y = temp ;
